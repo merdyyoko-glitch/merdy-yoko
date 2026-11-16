@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MERDY YOKO — Formation IA et création numérique</title>
+<meta name="description" content="Formation intensive de 3 jours en ligne : influenceurs virtuels, images et vidéos par IA, réseaux sociaux, audience et marketing digital. Préinscription gratuite.">
+<meta name="theme-color" content="#0f1426">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1426; --bg2:#151b33; --card:#1a2140; --line:#2b3460;
+  --text:#f4f2ff; --muted:#aab0d0; --violet:#8b45f5; --violet2:#b98cff; --pink:#e8546f;
+  --ok:#4ade80; --err:#ff8a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;font-weight:600;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violet2);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:76px 0}
+.kicker{color:var(--violet2);font-weight:600;font-size:.95rem;margin-bottom:10px}
+h2.title{font-size:clamp(2rem,5.5vw,2.9rem);margin-bottom:14px}
+.lede{color:var(--muted);max-width:600px;font-size:1.05rem;margin-bottom:38px}
+.center{text-align:center}.center .lede{margin-left:auto;margin-right:auto}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(90deg,var(--violet),var(--pink));color:#fff;font:600 1rem 'Inter',sans-serif;text-decoration:none;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;min-height:48px;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.small{padding:9px 18px;min-height:40px;font-size:.92rem}
+.btn.ghost{background:transparent;color:var(--violet2);border:1.5px solid var(--violet)}
+.btn.ghost:hover{background:rgba(139,69,245,.16)}
+.btn[disabled]{opacity:.6;cursor:wait;transform:none}
+
+/* En-tête */
+header{position:sticky;top:0;z-index:10;background:rgba(15,20,38,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font:700 1.3rem 'Outfit',sans-serif;letter-spacing:.1em;color:var(--violet2);text-decoration:none}
+.nav{display:flex;gap:26px}
+.nav a{text-decoration:none;color:var(--muted);font-size:.93rem;transition:color .15s}
+.nav a:hover{color:var(--violet2)}
+@media(max-width:760px){.nav{display:none}}
+
+/* Hero : le moment fort de la page */
+.hero{padding:70px 0 80px;background:radial-gradient(ellipse 70% 60% at 85% 10%,rgba(139,69,245,.32),transparent 65%),radial-gradient(ellipse 50% 50% at 0% 100%,rgba(232,84,111,.14),transparent 70%)}
+.hero .wrap{display:grid;gap:44px;grid-template-columns:1.15fr .85fr;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:48px}}
+.pill{display:inline-block;border:1px solid var(--line);background:rgba(26,33,64,.7);border-radius:999px;padding:6px 14px;font-size:.88rem;color:var(--violet2);margin-bottom:20px}
+.hero h1{font-size:clamp(2.7rem,8vw,4.9rem);letter-spacing:.04em;margin-bottom:18px;background:linear-gradient(90deg,var(--violet2),var(--violet) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:clamp(1.1rem,3.2vw,1.35rem);max-width:520px;margin-bottom:12px}
+.hero .sub{color:var(--muted);max-width:480px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:.9rem}
+.trust span::before{content:"✓ ";color:var(--ok);font-weight:700}
+
+.avatar-card{position:relative;max-width:340px;margin:0 auto;width:100%;aspect-ratio:4/5;border-radius:28px;border:1px solid var(--violet);background:linear-gradient(160deg,#2a1d5e,#1a2140 55%,#3a1a45);box-shadow:0 30px 70px rgba(139,69,245,.35);overflow:hidden;animation:float 6s ease-in-out infinite}
+.avatar-card::before{content:"";position:absolute;left:50%;top:22%;width:46%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle at 35% 30%,var(--violet2),var(--violet) 55%,#4b1fa8);box-shadow:0 0 50px rgba(185,140,255,.6)}
+.avatar-card::after{content:"";position:absolute;left:50%;top:58%;width:82%;height:70%;transform:translateX(-50%);border-radius:50% 50% 0 0;background:linear-gradient(180deg,var(--pink),var(--violet))}
+.avatar-card .scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--violet2),transparent);top:0;animation:scan 3.4s linear infinite;z-index:2}
+.avatar-card .chip{position:absolute;z-index:3;left:16px;right:16px;bottom:16px;background:rgba(15,20,38,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:.88rem}
+.avatar-card .chip b{display:block;font-family:'Outfit',sans-serif;font-size:1rem}
+.avatar-card .chip span{color:var(--muted)}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes scan{to{top:100%}}
+
+/* Intro + étapes */
+.intro{background:var(--bg2)}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--pink));font:600 1rem 'Outfit',sans-serif;margin-bottom:14px}
+.step h3{font-size:1.2rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.96rem}
+
+/* Programme et services */
+.grid3{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;gap:14px;align-items:center;transition:border-color .2s}
+.prog:hover{border-color:var(--violet)}
+.prog i{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(139,69,245,.18);font-style:normal;font-size:1.3rem}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px}
+.svc .ic{font-size:1.6rem;margin-bottom:10px}
+.svc h3{font-size:1.35rem;margin-bottom:8px;color:var(--violet2)}
+.svc p{color:var(--muted);font-size:.96rem}
+
+/* Tarifs */
+.formulas{background:var(--bg2)}
+.plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:stretch;padding-top:12px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;position:relative}
+.plan.best{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet),0 24px 60px rgba(139,69,245,.28)}
+.badge{position:absolute;top:-13px;left:24px;background:linear-gradient(90deg,var(--violet),var(--pink));font-size:.8rem;font-weight:600;padding:4px 13px;border-radius:999px}
+.plan .tag{color:var(--muted);font-size:.88rem}
+.plan h3{font-size:1.7rem;margin:4px 0}
+.price{font:600 3rem 'Outfit',sans-serif;color:var(--violet2);margin:4px 0 16px}
+.plan ul{list-style:none;margin-bottom:24px;flex:1}
+.plan li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--line);font-size:.97rem}
+.plan li::before{content:"✓";position:absolute;left:4px;color:var(--violet2);font-weight:700}
+.note{max-width:720px;margin:28px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* Bonus */
+.bonus{padding-bottom:20px}
+.bonus .box{max-width:780px;margin:0 auto;text-align:center;border:1px solid var(--violet);border-radius:24px;padding:42px 24px;background:linear-gradient(160deg,rgba(139,69,245,.24),rgba(232,84,111,.08))}
+.bonus .big{font:600 clamp(2rem,7vw,3.3rem)/1.1 'Outfit',sans-serif;color:var(--violet2);margin:8px 0 10px}
+.bonus p{color:var(--muted)}
+
+/* Formulaire */
+.signup{background:var(--bg2);margin-top:56px}
+form,.done{max-width:540px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px}
+label{display:block;font-size:.9rem;color:var(--muted);margin:16px 0 6px}
+input,select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:14px;border-radius:12px;font:1rem 'Inter',sans-serif;min-height:48px}
+input:focus,select:focus{outline:2px solid var(--violet);border-color:transparent}
+input[aria-invalid="true"]{border-color:var(--err)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+form .btn{width:100%;margin-top:24px}
+.msg{min-height:1.4em;margin-top:12px;font-size:.92rem;text-align:center}
+.msg.err{color:var(--err)}
+.free{text-align:center;color:var(--violet2);font-size:.88rem;margin-top:6px}
+.done{text-align:center;display:none}
+.done .check{width:60px;height:60px;border-radius:50%;background:rgba(74,222,128,.16);color:var(--ok);display:grid;place-items:center;font-size:1.9rem;margin:0 auto 14px;animation:pop .4s ease-out}
+.done h3{font-size:1.7rem;margin-bottom:8px}
+.done p{color:var(--muted);margin-bottom:20px}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+
+/* Contact et pied de page */
+.contact .num{font:600 clamp(1.6rem,6vw,2.1rem) 'Outfit',sans-serif;color:var(--violet2);margin:6px 0 22px}
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;background:#25d366;color:#08210f;font-weight:600;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.45);font-size:.95rem}
+.wa-float:hover{filter:brightness(1.06)}
+footer{padding:44px 0 90px;text-align:center;border-top:1px solid var(--line)}
+footer p{color:var(--muted);font-size:.92rem;margin-top:10px}
+@media(max-width:520px){section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">MERDY YOKO</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#formation">Formation</a>
+      <a href="#services">Services</a>
+      <a href="#formules">Tarifs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn small" href="#preinscription">Préinscription</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill">Formation en ligne de 3 jours</span>
+        <h1>MERDY YOKO</h1>
+        <p class="lead">L’intelligence artificielle au service de ta créativité et de ton succès numérique.</p>
+        <p class="sub">Apprends à créer, développe ton audience et exploite le digital.</p>
+        <div class="cta">
+          <a class="btn" href="#preinscription">Je me préinscris gratuitement</a>
+          <a class="btn ghost" href="#formules">Voir les formules</a>
+        </div>
+        <div class="trust"><span>Préinscription gratuite</span><span>Sans engagement</span><span>100 % en ligne</span></div>
+      </div>
+      <div class="avatar-card" role="img" aria-label="Illustration d’un influenceur virtuel créé par intelligence artificielle">
+        <div class="scan"></div>
+        <div class="chip"><b>Influenceur virtuel</b><span>Créé avec l’IA, de A à Z</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro" aria-labelledby="intro-t">
+    <div class="wrap center">
+      <h2 class="title" id="intro-t">Comment ça marche</h2>
+      <p class="lede">Tu veux créer des influenceurs virtuels, produire des vidéos avec l’IA et développer ta présence sur les réseaux sociaux ? Voici comment démarrer.</p>
+      <div class="steps" style="text-align:left">
+        <div class="step"><h3>Préinscris-toi</h3><p>Remplis le formulaire en 1 minute. C’est gratuit.</p></div>
+        <div class="step"><h3>Choisis ta formule</h3><p>Essentielle, Marketing ou Premium : tu décides ensuite.</p></div>
+        <div class="step"><h3>Échange sur WhatsApp</h3><p>Nous te contactons pour confirmer ta place et la suite.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="wrap center">
+      <h2 class="title">Au programme</h2>
+      <p class="lede">Une formation intensive de 3 jours en ligne pour découvrir les possibilités de l’intelligence artificielle et apprendre à créer du contenu numérique.</p>
+      <div class="grid3" style="text-align:left">
+        <div class="prog"><i>🤖</i><p>Création d’influenceurs virtuels avec l’IA</p></div>
+        <div class="prog"><i>🎬</i><p>Création d’images et de vidéos</p></div>
+        <div class="prog"><i>📱</i><p>Production de contenus pour les réseaux sociaux</p></div>
+        <div class="prog"><i>👥</i><p>Découverte des stratégies de développement d’audience</p></div>
+        <div class="prog"><i>💡</i><p>Initiation aux possibilités de monétisation</p></div>
+        <div class="prog"><i>📈</i><p>Découverte du marketing digital</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="padding-top:0">
+    <div class="wrap center">
+      <h2 class="title">Au-delà de la formation</h2>
+      <p class="lede">Tu préfères que l’on t’accompagne directement ? Contacte-nous pour discuter de ton projet.</p>
+      <div class="grid3" style="text-align:left">
+        <div class="svc"><div class="ic">🤖</div><h3>Influenceurs virtuels</h3><p>Création de personnages virtuels grâce à l’IA, pour incarner ta marque ou ton projet sur les réseaux.</p></div>
+        <div class="svc"><div class="ic">🎬</div><h3>Images et vidéos IA</h3><p>Production de visuels et de vidéos avec l’intelligence artificielle pour tes publications.</p></div>
+        <div class="svc"><div class="ic">📱</div><h3>Contenus réseaux sociaux</h3><p>Création de contenus adaptés à chaque plateforme pour développer ta présence en ligne.</p></div>
+        <div class="svc"><div class="ic">📈</div><h3>Marketing digital</h3><p>Stratégies de développement d’audience et accompagnement dans tes démarches de monétisation.</p></div>
+        <div class="svc"><div class="ic">🗂️</div><h3>Gestion d’activités numériques</h3><p>Assistance dans la gestion de tes activités et de tes projets numériques.</p></div>
+        <div class="svc"><div class="ic">🎓</div><h3>Formation en ligne</h3><p>Formation intensive de 3 jours pour apprendre à créer, produire et publier avec l’IA.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="formulas" id="formules">
+    <div class="wrap">
+      <div class="center"><h2 class="title">Choisis ta formule</h2></div>
+      <div class="plans">
+        <div class="plan">
+          <div class="tag">Formule 1</div>
+          <h3>Essentielle</h3>
+          <div class="price">25 $</div>
+          <ul>
+            <li>Formation de 3 jours</li>
+            <li>Accompagnement des participants</li>
+            <li>Initiation à la création de contenus avec l’IA</li>
+          </ul>
+          <a class="btn ghost" href="#preinscription" data-plan="Formule 1 — Essentielle (25 $)">Choisir l’Essentielle</a>
+        </div>
+        <div class="plan">
+          <div class="tag">Formule 2</div>
+          <h3>Marketing</h3>
+          <div class="price">35 $</div>
+          <ul>
+            <li>Formation de 3 jours</li>
+            <li>Accompagnement</li>
+            <li>Accès aux outils marketing prévus dans la formation</li>
+            <li>Initiation aux stratégies de développement numérique</li>
+          </ul>
+          <a class="btn ghost" href="#preinscription" data-plan="Formule 2 — Marketing (35 $)">Choisir Marketing</a>
+        </div>
+        <div class="plan best">
+          <div class="badge">La plus complète</div>
+          <div class="tag">Formule 3</div>
+          <h3>Premium</h3>
+          <div class="price">70 $</div>
+          <ul>
+            <li>Formation complète de 3 jours</li>
+            <li>Accompagnement renforcé</li>
+            <li>Accès à l’ensemble des outils et ressources inclus dans cette formule</li>
+            <li>Assistance à la gestion des activités numériques</li>
+            <li>Accompagnement sur les démarches de monétisation</li>
+            <li>Orientation vers les opportunités de partenariat</li>
+          </ul>
+          <a class="btn" href="#preinscription" data-plan="Formule 3 — Premium (70 $)">Choisir Premium</a>
+        </div>
+      </div>
+      <p class="note">La monétisation et les partenariats dépendent notamment des conditions des plateformes et des partenaires. Aucun revenu n’est garanti.</p>
+    </div>
+  </section>
+
+  <section class="bonus">
+    <div class="wrap">
+      <div class="box">
+        <div class="kicker">Bonus</div>
+        <div class="big">🎁 10 000 abonnés offerts</div>
+        <p>Selon les modalités et conditions communiquées aux participants.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup" id="preinscription">
+    <div class="wrap">
+      <div class="center">
+        <h2 class="title">Préinscription gratuite</h2>
+        <p class="lede">Réserve ta place maintenant et choisis ta formule plus tard. Cela ne t’engage à rien.</p>
+      </div>
+
+      <form id="form" novalidate>
+        <label for="nom">Nom complet</label>
+        <input id="nom" name="nom" required autocomplete="name" placeholder="Ton nom">
+
+        <label for="tel">Numéro WhatsApp</label>
+        <input id="tel" name="tel" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+243 ...">
+
+        <label for="pays">Pays</label>
+        <select id="pays" name="pays" autocomplete="country-name" required>
+          <option value="">Choisis ton pays</option>
+          <option>RD Congo</option>
+          <option>Congo-Brazzaville</option>
+          <option>Angola</option>
+          <option>Burundi</option>
+          <option>Rwanda</option>
+          <option>Ouganda</option>
+          <option>Kenya</option>
+          <option>Tanzanie</option>
+          <option>Zambie</option>
+          <option>Afrique du Sud</option>
+          <option>Cameroun</option>
+          <option>Gabon</option>
+          <option>Tchad</option>
+          <option>République centrafricaine</option>
+          <option>Côte d’Ivoire</option>
+          <option>Sénégal</option>
+          <option>Mali</option>
+          <option>Burkina Faso</option>
+          <option>Niger</option>
+          <option>Guinée</option>
+          <option>Bénin</option>
+          <option>Togo</option>
+          <option>Ghana</option>
+          <option>Nigeria</option>
+          <option>Madagascar</option>
+          <option>Maurice</option>
+          <option>Maroc</option>
+          <option>Algérie</option>
+          <option>Tunisie</option>
+          <option>Égypte</option>
+          <option>France</option>
+          <option>Belgique</option>
+          <option>Suisse</option>
+          <option>Canada</option>
+          <option>États-Unis</option>
+          <option>Royaume-Uni</option>
+          <option>Allemagne</option>
+          <option>Espagne</option>
+          <option>Italie</option>
+          <option>Portugal</option>
+          <option>Autre</option>
+        </select>
+        <input id="autre" name="autre" placeholder="Écris le nom de ton pays" style="display:none;margin-top:10px" autocomplete="off">
+
+        <label for="formule">Formule envisagée</label>
+        <select id="formule" name="formule">
+          <option>Je n’ai pas encore choisi</option>
+          <option>Formule 1 — Essentielle (25 $)</option>
+          <option>Formule 2 — Marketing (35 $)</option>
+          <option>Formule 3 — Premium (70 $)</option>
+        </select>
+
+        <div class="hp" aria-hidden="true"><label for="site">Ne pas remplir</label><input id="site" name="site" tabindex="-1" autocomplete="off"></div>
+
+        <button class="btn" type="submit" id="send">Envoyer ma préinscription</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+        <p class="free">100 % gratuit · sans engagement</p>
+      </form>
+
+      <div class="done" id="done" tabindex="-1">
+        <div class="check">✓</div>
+        <h3>C’est noté, <span id="who"></span> !</h3>
+        <p>Ta préinscription est bien enregistrée. Confirme-la sur WhatsApp pour que nous puissions te répondre plus vite.</p>
+        <a class="btn" id="wa-confirm" href="#" target="_blank" rel="noopener">Confirmer sur WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact center" id="contact">
+    <div class="wrap">
+      <h2 class="title">Une question ? Parlons-en</h2>
+      <p class="lede">Écris-nous sur WhatsApp pour la formation, un service ou toute information.</p>
+      <div class="num">+243 897 238 396</div>
+      <a class="btn" href="https://wa.me/243897238396?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20formations%20et%20services." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/243897238396?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20formations%20et%20services." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">💬 WhatsApp</a>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top">MERDY YOKO</a>
+    <p>Donne une nouvelle dimension à tes idées grâce à l’IA.</p>
+    <p style="font-size:.8rem">© <span id="y"></span> MERDY YOKO. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIGURATION =====
+   1. Déploie le script Google Apps Script (voir les instructions).
+   2. Colle ci-dessous l’URL de l’application web (elle se termine par /exec). */
+var SHEET_URL = "";                 // ex. "https://script.google.com/macros/s/XXXX/exec"
+var WHATSAPP_NUMBER = "243897238396"; // sans "+" ni espaces
+
+var $ = function(id){ return document.getElementById(id); };
+$('y').textContent = new Date().getFullYear();
+
+// Les boutons des formules présélectionnent la formule
+document.querySelectorAll('[data-plan]').forEach(function(a){
+  a.addEventListener('click', function(){ $('formule').value = a.getAttribute('data-plan'); });
+});
+
+$('pays').addEventListener('change', function(){
+  var o = this.value === "Autre";
+  $('autre').style.display = o ? 'block' : 'none';
+  if (o) $('autre').focus();
+});
+
+function waLink(d){
+  var msg = "Bonjour, je viens de me préinscrire à la formation MERDY YOKO.\n\n" +
+            "Nom : " + d.nom + "\nWhatsApp : " + d.tel + "\nPays : " + (d.pays || "—") + "\nFormule : " + d.formule;
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+}
+function setMsg(t, err){ var m = $('msg'); m.textContent = t; m.className = 'msg' + (err ? ' err' : ''); }
+
+$('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  if (f.site.value) return;                       // anti-spam (champ piège)
+
+  var pays = f.pays.value === "Autre" ? f.autre.value.trim() : f.pays.value;
+  var d = { nom: f.nom.value.trim(), tel: f.tel.value.trim(), pays: pays, formule: f.formule.value };
+  var digits = d.tel.replace(/\D/g, '');
+  if (!d.pays){ setMsg("Choisis ton pays dans la liste.", true); (f.pays.value === "Autre" ? f.autre : f.pays).focus(); return; }
+  f.nom.setAttribute('aria-invalid', d.nom.length < 2);
+  f.tel.setAttribute('aria-invalid', digits.length < 8);
+  if (d.nom.length < 2){ setMsg("Indique ton nom complet.", true); f.nom.focus(); return; }
+  if (digits.length < 8){ setMsg("Vérifie ton numéro WhatsApp (avec l’indicatif du pays).", true); f.tel.focus(); return; }
+
+  var btn = $('send');
+  btn.disabled = true; btn.textContent = "Envoi en cours…"; setMsg("");
+
+  function finish(){
+    $('who').textContent = d.nom.split(' ')[0];
+    $('wa-confirm').href = waLink(d);
+    f.style.display = 'none';
+    var done = $('done'); done.style.display = 'block'; done.focus();
+  }
+
+  // Sans URL Google Sheets configurée : on bascule sur WhatsApp uniquement
+  if (!SHEET_URL){ window.open(waLink(d), "_blank"); btn.disabled = false; btn.textContent = "Envoyer ma préinscription"; return; }
+
+  d.date = new Date().toLocaleString('fr-FR');
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',                              // Apps Script n’autorise pas la lecture de la réponse
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(d)
+  }).then(finish).catch(function(){
+    btn.disabled = false; btn.textContent = "Envoyer ma préinscription";
+    setMsg("Envoi impossible. Vérifie ta connexion et réessaie, ou écris-nous sur WhatsApp.", true);
+  });
+});
+</script>
+</body>
+</html>
